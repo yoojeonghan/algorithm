@@ -9,7 +9,7 @@
 
 #2. 계획
 ---------------
-배열 초기의 인덱스를 답안 제출할 때 써야하므로 일단 {index: index, value: value}의 형태로 배열을 다시 만든다. 가장 앞쪽에 있는 값을 꺼낸 뒤 남은 배열에서 더 큰 value가 있는지 확인한다. 있다면 배열에 다시 푸쉬하고, 없다면 resultArray에 index를 푸쉬한다. 마지막으로 resultArray를 순회하며 location의 index와 일치하는 값의 resultArray의 인덱스를 반환한다.
+먼저 skill문자열을 Array로 변환한다. 그 다음 skill_trees를 순회하며 skill_trees[i]에서 skill에 있는 스킬만 빼서 새 array로 만든다. 그 후 array를 순회하며, skill과 array의 순서가 일치하는지 확인한다. 
 
 #3. 실행
 -----------------
