@@ -18,4 +18,26 @@ function solution (array) {
     }
     return answer;
 }
-module.exports = solution;
+    
+function solution2 (array) {
+    array = Array.from(array);
+    let answer = 0;
+    let stack = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === '(') {
+            stack.push(array[i]);
+        } else {
+            stack.pop();
+            if (array[i-1] === '(') {
+                answer += stack.length;
+            } else {
+                answer += 1;
+            }
+        }
+    }
+    return answer;
+}
+module.exports = {
+    solution,
+    solution2
+};
