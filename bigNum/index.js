@@ -1,18 +1,16 @@
 function solution(number, k) {
+    let answer = [];
     for (let i = 0; i < number.length; i++) {
-        if (k == 0) {
-            break;
-        }
-        if (number[i] < number[i+1]) {
-            number = number.substring(0, i) + number.substring(i + 1, number.length);
+        while (k > 0 && answer[answer.length - 1] < number[i]) {
+            answer.pop();
             k--;
-            i-=2;
         }
+        answer.push(number[i]);
     }
     if (k > 0) {
-        number = number.substring(0, number.length - k);
+        answer.splice(answer.length - k, k);
     }
-    return number;
+    return answer.join('');
 }
 
 module.exports = solution;

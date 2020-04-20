@@ -8,7 +8,7 @@ describe('solution Test', () => {
     it('"1231234", 3의 경우 가장 큰 수는 3234이다.', function() {
         asssert.equal(solution('1231234', 3), '3234');
     });
-    it('"4177252841", 4의 경우 가장 큰 수는 775841이다.', function() {
-        asssert.equal(solution('4177252841', 4), '775841');
+    it('"4177252841", 2의 경우 가장 큰 수는 77252841이다.', function() {
+        asssert.equal(solution('4177252841', 2), '77252841');
     });
 });
