@@ -14,12 +14,12 @@ function solution(matrix, cost, m, n) {
     dfs([0, 0], cost - matrix[0][0], [[0, 0], matrix[0][0]], checkedArray);
 
     function dfs(start, remainCost, points, checked) {
-        if (start[0] == matrix.length - 1 && start[1] == matrix.length - 1 && remainCost == 0) {
+        if (start[0] == n - 1 && start[1] == m - 1 && remainCost == 0) {
             answer++;
         }
         for (let i = 0; i < 2; i++) {
             const nextPoint = [start[0] + moveArray[i][0], start[1] + moveArray[i][1]];
-            if (nextPoint[0] >= 0 && nextPoint[1] >= 0 && nextPoint[0] < m && nextPoint[1] < n) {
+            if (nextPoint[0] >= 0 && nextPoint[1] >= 0 && nextPoint[0] < n && nextPoint[1] < m) {
                 if (!checked[nextPoint[0]][nextPoint[1]]) {
                     const currentCost = remainCost - matrix[nextPoint[0]][nextPoint[1]];
                     if (currentCost >= 0) {
