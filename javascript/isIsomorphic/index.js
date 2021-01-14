@@ -13,7 +13,6 @@ var isIsomorphic = function(s, t) {
     t = t.split("");
     
     let nums = 0;
-    let numt = 0;
     for (let i = 0; i < s.length; i += 1) {
         s = s.map((item) => { 
             if (!Number.isInteger(item) && item == s[i]) {
@@ -22,24 +21,19 @@ var isIsomorphic = function(s, t) {
             }
             return item;
         });
+        
+        t = t.map((item) => { 
+            if (!Number.isInteger(item) && item == t[i]) {
+                return i;
+            }
+            return item;
+        });
+        
         if (nums === s.length) {
             break;
         }
     }
     
-    for (let i = 0; i < t.length; i += 1) {
-        t = t.map((item) => { 
-            if (!Number.isInteger(item) && item == t[i]) {
-                numt += 1;
-                return i;
-            }
-            return item;
-        });
-        if (numt === t.length) {
-            break;
-        }
-    }
-        
     return s.join("") === t.join("");
 };
 /**
