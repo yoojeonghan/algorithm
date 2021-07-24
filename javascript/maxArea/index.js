@@ -31,3 +31,8 @@
     
     return result;
 };
+
+/**
+ * Runtime: 92 ms, faster than 57.58% of JavaScript online submissions for Container With Most Water.
+ * Memory Usage: 48.3 MB, less than 11.82% of JavaScript online submissions for Container With Most Water.
+ */
